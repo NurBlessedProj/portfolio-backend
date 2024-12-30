@@ -1,0 +1,41 @@
+{% block page_css %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/index.css') }}"
+/>
+{% endblock %} {% extends "base.html" %} {% block title %}Home{% endblock %} {%
+block content %}
+<div class="row mt-5">
+  <div class="col-md-12 text-center">
+    <p class="lead">Discover amazing features and services we offer</p>
+  </div>
+</div>
+<div class="row mt-4">
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Innovation</h5>
+        <p class="card-text">We bring innovative solutions to your problems.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Quality</h5>
+        <p class="card-text">
+          We ensure the highest quality in everything we do.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Support</h5>
+        <p class="card-text">24/7 support for all your needs.</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

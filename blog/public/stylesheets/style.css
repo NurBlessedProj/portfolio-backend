@@ -1,0 +1,20 @@
+body {
+  padding: 50px;
+  font: 14px monospace;
+}
+
+a {
+  color: #00b7ff;
+}
+
+.posts li {
+  display: flex;
+  gap: 2em;
+  flex-direction: column;
+}
+.posts span {
+  display: flex;
+  gap: 3em;
+  font-weight: 700;
+  text-transform: uppercase;
+}

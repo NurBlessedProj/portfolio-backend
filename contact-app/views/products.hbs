@@ -1,0 +1,26 @@
+<h3>Products</h3>
+
+{{#if query.message}}
+  <script>
+    alert("{{query.message}}");
+  </script>
+{{/if}}
+
+<div class="product-grid">
+  {{#each products}}
+    <div class="product-item">
+      <strong>Name:</strong>
+      {{name}}
+      <div><strong>Description:</strong> {{description}}</div>
+      <div><strong>Price:</strong> ${{price}}</div>
+
+      <div class="action-buttons">
+        <form><a href="/products/update/{{_id}}" class="btn-update">Update</a></form>
+        <form action="/products/delete/{{_id}}" method="POST">
+          <button type="submit" class="btn-delete">Delete</button>
+        </form>
+      </div>
+
+    </div>
+  {{/each}}
+</div>

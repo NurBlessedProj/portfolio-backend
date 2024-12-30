@@ -1,0 +1,222 @@
+/* Main Container Styles */
+.row.mt-5 {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 2rem;
+  animation: fadeIn 0.8s ease;
+}
+
+/* Header Section */
+h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  position: relative;
+  animation: slideDown 0.8s ease;
+}
+
+h1::after {
+  content: "";
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  border-radius: 2px;
+}
+
+.lead {
+  font-size: 1.25rem;
+  color: var(--light-text);
+  margin-bottom: 3rem;
+  animation: slideUp 0.8s ease 0.2s backwards;
+}
+
+/* Content Section */
+.mt-4 {
+  display: grid;
+  gap: 3rem;
+  animation: fadeIn 0.8s ease 0.4s backwards;
+}
+
+h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 1.25rem;
+  position: relative;
+  padding-left: 1rem;
+  border-left: 4px solid var(--primary-color);
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--light-text);
+  margin-bottom: 2rem;
+}
+
+/* Values List */
+.stuff ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.stuff li {
+  position: relative;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeIn 0.8s ease backwards;
+}
+
+.stuff li:nth-child(1) {
+  animation-delay: 0.6s;
+}
+.stuff li:nth-child(2) {
+  animation-delay: 0.8s;
+}
+.stuff li:nth-child(3) {
+  animation-delay: 1s;
+}
+.stuff li:nth-child(4) {
+  animation-delay: 1.2s;
+}
+
+.stuff li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.stuff li::before {
+  content: "→";
+  color: var(--primary-color);
+  font-weight: bold;
+  margin-right: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.stuff li:hover::before {
+  transform: translateX(5px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .row.mt-5 {
+    margin: 2rem auto;
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .lead {
+    font-size: 1.125rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Section Transitions */
+.mt-4 > * {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: sectionFadeIn 0.8s ease forwards;
+}
+
+.mt-4 > *:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.mt-4 > *:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.mt-4 > *:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes sectionFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Print Styles */
+@media print {
+  .row.mt-5 {
+    margin: 0;
+    padding: 0;
+  }
+
+  h1::after {
+    display: none;
+  }
+
+  li {
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+}
